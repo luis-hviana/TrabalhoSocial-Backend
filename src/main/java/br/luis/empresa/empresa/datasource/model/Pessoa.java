@@ -18,10 +18,6 @@ public class Pessoa implements UserDetails {
 
     private String nome;
     private String email;
-
-    @Column(name = "trabalho")
-    private String trabalho;
-
     private String cidade;
     private String estado;
 
@@ -66,14 +62,6 @@ public class Pessoa implements UserDetails {
 
     public String getEmail() {
         return email;
-    }
-
-    public void setTrabalho(String trabalho) {
-        this.trabalho = trabalho;
-    }
-
-    public String getTrabalho() {
-        return trabalho;
     }
 
     public void setCidade(String cidade) {

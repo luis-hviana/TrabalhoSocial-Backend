@@ -2,33 +2,21 @@ package br.luis.empresa.empresa.resource.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class PessoaResource {
+public class EmpresaResource {
 
     @JsonProperty("")
     private long id;
-    private String login;
-    private String senha;
     private String nome;
-    private String email;
     private String cidade;
     private String estado;
+    private String projeto;
 
-    public PessoaResource(long id, String nome, String login, String senha, String email, String cidade, String estado) {
+    public EmpresaResource(long id, String nome, String cidade, String estado, String projeto) {
         this.id = id;
-        this.login = login;
-        this.senha = senha;
         this.nome = nome;
-        this.email = email;
         this.cidade = cidade;
         this.estado = estado;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
+        this.projeto = projeto;
     }
 
     public long getId() {
@@ -39,28 +27,12 @@ public class PessoaResource {
         this.id = id;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getCidade() {
@@ -78,4 +50,13 @@ public class PessoaResource {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public String getProjeto() {
+        return projeto;
+    }
+
+    public void setProjeto(String projeto) {
+        this.projeto = projeto;
+    }
 }
+
