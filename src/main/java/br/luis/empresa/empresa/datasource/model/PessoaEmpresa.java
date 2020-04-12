@@ -9,13 +9,15 @@ public class PessoaEmpresa {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name= "pessoa_id")
     private Pessoa pessoa;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name= "empresa_id")
     private Empresa empresa;
+
+    public PessoaEmpresa() {}
 
     public long getId() {
         return id;

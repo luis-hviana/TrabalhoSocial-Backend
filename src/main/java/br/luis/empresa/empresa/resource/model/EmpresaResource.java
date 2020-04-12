@@ -7,12 +7,16 @@ public class EmpresaResource {
     @JsonProperty("")
     private long id;
     private String nome;
+    private String login;
+    private String senha;
     private String cidade;
     private String estado;
     private String projeto;
 
-    public EmpresaResource(long id, String nome, String cidade, String estado, String projeto) {
+    public EmpresaResource(long id, String login, String senha, String nome, String cidade, String estado, String projeto) {
         this.id = id;
+        this.login = login;
+        this.senha = senha;
         this.nome = nome;
         this.cidade = cidade;
         this.estado = estado;
@@ -25,6 +29,22 @@ public class EmpresaResource {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public String getNome() {

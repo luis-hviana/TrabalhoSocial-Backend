@@ -3,12 +3,10 @@ package br.luis.empresa.empresa.controller;
 import br.luis.empresa.empresa.datasource.model.Pessoa;
 import br.luis.empresa.empresa.repository.PessoaRepository;
 
-import java.awt.*;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -31,4 +29,7 @@ public class PessoaController {
     public void deletePessoaID(@PathVariable(name = "id", required = true) long id) {
         pessoaRepository.deleteById(id);
     }
+    
+    @PutMapping(path = "/pessoa")
+    public Pessoa uptadePessoa(@RequestBody Pessoa pessoa) { return pessoaRepository.save(pessoa); }
 }

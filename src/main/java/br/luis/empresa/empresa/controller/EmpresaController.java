@@ -29,5 +29,8 @@ public class EmpresaController {
 
     @DeleteMapping(path = "/empresa/{id}")
     public void deleteEmpresa(@PathVariable(name = "id", required = true) long id) { empresaRepository.deleteById(id); }
+
+    @PutMapping(path = "/empresa")
+    public Empresa uptadeEmpresa(@RequestBody Empresa empresa) { return empresaRepository.save(empresa); }
 }
 
