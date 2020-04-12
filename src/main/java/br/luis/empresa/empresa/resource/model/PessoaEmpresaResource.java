@@ -1,31 +1,33 @@
 package br.luis.empresa.empresa.resource.model;
 
+import br.luis.empresa.empresa.datasource.model.Empresa;
+import br.luis.empresa.empresa.datasource.model.Pessoa;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PessoaEmpresaResource {
 
     @JsonProperty("")
-    private long pessoa_id;
-    private long empresa_id;
+    private Empresa empresa;
+    private Pessoa pessoa;
 
-    public PessoaEmpresaResource(long pessoa_id, long empresa_id) {
-        this.pessoa_id = pessoa_id;
-        this.empresa_id = empresa_id;
+    public PessoaEmpresaResource(Empresa empresa, Pessoa pessoa) {
+        this.empresa = empresa;
+        this.pessoa = pessoa;
     }
 
-    public long getPessoa_id() {
-        return pessoa_id;
+    public Empresa getEmpresa() {
+        return empresa;
     }
 
-    public void setPessoa_id(long pessoa_id) {
-        this.pessoa_id = pessoa_id;
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
 
-    public long getEmpresa_id() {
-        return empresa_id;
+    public Pessoa getPessoa() {
+        return pessoa;
     }
 
-    public void setEmpresa_id(long empresa_id) {
-        this.empresa_id = empresa_id;
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
 }

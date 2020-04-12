@@ -9,7 +9,6 @@ public class EmpresaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EmpresaApplication.class, args);
-		System.out.println(new BCryptPasswordEncoder().encode("123"));
 	}
 
 }

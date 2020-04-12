@@ -18,6 +18,9 @@ public class WebSecutiryConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private ImplementsUserDetailsService userDetailsService;
 
+    @Autowired
+    private ImplementsEmpresaDetaisService empresaDetaisService;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception{
         http.csrf().disable().authorizeRequests()
@@ -29,8 +32,8 @@ public class WebSecutiryConfig extends WebSecurityConfigurerAdapter {
 
     @Override
         protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-            auth.userDetailsService(userDetailsService)
-            .passwordEncoder(new BCryptPasswordEncoder());
+            auth.userDetailsService(userDetailsService);
+            auth.userDetailsService(empresaDetaisService);
     }
 
     @Override

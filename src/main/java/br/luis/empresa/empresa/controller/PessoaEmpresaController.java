@@ -26,7 +26,7 @@ public class PessoaEmpresaController {
         return pessoaEmpresaRepository.findById(id);
     }
 
-    @PostMapping(path = "/pessoaempresa/create")
+    @PostMapping(path = "/pessoaempresa")
     public void criar(@RequestBody PessoaEmpresa pessoaEmpresa) { pessoaEmpresaRepository.save(pessoaEmpresa); }
 
     @DeleteMapping(path = "/pessoaempresa/delete/{id}")
