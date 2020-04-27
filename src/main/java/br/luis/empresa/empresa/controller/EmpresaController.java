@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 public class EmpresaController {
     @Autowired
@@ -25,12 +27,12 @@ public class EmpresaController {
     }
 
     @PostMapping(path = "/empresa/create")
-    public void criarEmpresa(@RequestBody Empresa empresa) { empresaRepository.save(empresa); }
+    public void criarEmpresa(@Valid @RequestBody Empresa empresa) { empresaRepository.save(empresa); }
 
     @DeleteMapping(path = "/empresa/{id}")
     public void deleteEmpresa(@PathVariable(name = "id", required = true) long id) { empresaRepository.deleteById(id); }
 
     @PutMapping(path = "/empresa")
-    public Empresa uptadeEmpresa(@RequestBody Empresa empresa) { return empresaRepository.save(empresa); }
+    public Empresa uptadeEmpresa(@Valid @RequestBody Empresa empresa) { return empresaRepository.save(empresa); }
 }
 

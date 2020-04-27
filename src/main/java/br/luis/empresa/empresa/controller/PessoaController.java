@@ -9,6 +9,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 public class PessoaController {
     @Autowired
@@ -23,7 +25,7 @@ public class PessoaController {
     }
 
     @PostMapping(path = "/pessoa/create")
-    public void criarPessoa(@RequestBody Pessoa pessoa) { pessoaRepository.save(pessoa); }
+    public void criarPessoa(@Valid @RequestBody Pessoa pessoa) { pessoaRepository.save(pessoa); }
 
     @DeleteMapping(path = "/pessoa/{id}")
     public void deletePessoaID(@PathVariable(name = "id", required = true) long id) {
@@ -31,5 +33,5 @@ public class PessoaController {
     }
     
     @PutMapping(path = "/pessoa")
-    public Pessoa uptadePessoa(@RequestBody Pessoa pessoa) { return pessoaRepository.save(pessoa); }
+    public Pessoa uptadePessoa(@Valid @RequestBody Pessoa pessoa) { return pessoaRepository.save(pessoa); }
 }

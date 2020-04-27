@@ -4,6 +4,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Collection;
 
 @Entity(name = "pessoa")
@@ -13,12 +16,24 @@ public class Pessoa implements UserDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @NotBlank
+    @Size(max = 25)
     private String login;
+
+    @NotBlank
+    @Size(max = 25)
     private String senha;
 
+    @NotBlank
+    @Size(max = 60)
     private String nome;
+
+    @NotBlank
+    @Email
+    @Size(max = 255)
     private String email;
     private String cidade;
+    @Size(max = 2)
     private String estado;
 
     private Pessoa() {
